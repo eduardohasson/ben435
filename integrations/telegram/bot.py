@@ -3,20 +3,21 @@ import sys
 sys.path.insert(0, os.path.expanduser("~/ben435"))
 from dotenv import load_dotenv
 from telegram.ext import Updater, MessageHandler, Filters, CommandHandler
-from core.engine import CoreEngine
+from agents.template.agent import Agent
+from agents.clube_football.config import AGENT_ID, NOME, INSTRUCOES
 
 load_dotenv()
 
-engine = CoreEngine(agent_id="ben435_main")
+agente = Agent(agent_id=AGENT_ID, nome=NOME, instrucoes=INSTRUCOES)
 
 def start(update, context):
-    update.message.reply_text("Ola! Sou o agente Ben435. Como posso ajudar?")
+    update.message.reply_text(f"Ola! Sou o {agente.nome}. Como posso ajudar?")
 
 def responder(update, context):
     user_id = str(update.message.from_user.id)
     message = update.message.text
     print(f"[{user_id}]: {message}")
-    response = engine.process(message, user_id)
+    response = agente.responder(message, user_id)
     update.message.reply_text(response)
 
 def main():
@@ -25,7 +26,7 @@ def main():
     dp = updater.dispatcher
     dp.add_handler(CommandHandler("start", start))
     dp.add_handler(MessageHandler(Filters.text & ~Filters.command, responder))
-    print("Ben435 Bot rodando...")
+    print(f"Ben435 — {agente.nome} rodando...")
     updater.start_polling()
     updater.idle()
 
