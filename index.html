@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ben435 — Agentes Inteligentes</title>
+  <title>Ben435 — Intelligent Agents</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
   <style>
@@ -12,32 +12,66 @@
   </style>
 </head>
 <body class="bg-[#0B1F3A] text-white">
-  <nav class="fixed top-0 w-full border-b border-white/10 bg-[#0B1F3A]/90 backdrop-blur-lg z-50">
+
+  <!-- Language Switch -->
+  <div class="fixed top-6 right-6 z-50 flex gap-2 text-sm">
+    <button onclick="switchLang('en')" class="px-4 py-1.5 rounded-full bg-white/10 hover:bg-white/20 active">EN</button>
+    <button onclick="switchLang('pt')" class="px-4 py-1.5 rounded-full bg-white/10 hover:bg-white/20">PT</button>
+    <button onclick="switchLang('he')" class="px-4 py-1.5 rounded-full bg-white/10 hover:bg-white/20">HE</button>
+  </div>
+
+  <!-- NAV -->
+  <nav class="fixed top-0 w-full border-b border-white/10 bg-[#0B1F3A]/90 backdrop-blur-lg z-40">
     <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
       <div class="flex items-center gap-3">
         <span class="text-3xl font-bold tracking-tighter title text-[#C9A84C]">BEN435</span>
       </div>
       <div class="flex gap-8 text-sm">
-        <a href="#produtos" class="hover:text-[#C9A84C]">Produtos</a>
-        <a href="#demo" class="hover:text-[#C9A84C]">Demo</a>
+        <a href="#products" class="hover:text-[#C9A84C]">Products</a>
+        <a href="#about" class="hover:text-[#C9A84C]">About</a>
       </div>
-      <a href="#acesso" class="bg-[#C9A84C] text-black px-6 py-2.5 rounded-2xl font-medium">Acesso Antecipado</a>
+      <a href="#access" class="bg-[#C9A84C] text-black px-6 py-2.5 rounded-2xl font-medium">Request Early Access</a>
     </div>
   </nav>
 
+  <!-- HERO -->
   <section class="min-h-screen flex items-center pt-20">
     <div class="max-w-5xl mx-auto px-6 text-center">
       <h1 class="title text-7xl md:text-8xl font-bold leading-none tracking-tighter mb-8">
-        Agentes que trabalham<br>para você.
+        Football management in the new economy.
       </h1>
-      <p class="text-2xl text-gray-300 max-w-2xl mx-auto mb-12">
-        Análise inteligente de contratos • Agente de inglês por voz • Mais produtos em breve.
+      <p class="max-w-2xl mx-auto text-2xl text-gray-300 mb-12">
+        Intelligent agents for contract analysis and English conversation practice.
       </p>
-      <a href="#acesso" class="inline-block bg-[#C9A84C] hover:bg-[#E8C96A] text-black px-10 py-4 rounded-3xl text-lg font-semibold transition">Começar Grátis</a>
+      <a href="#access" class="inline-block bg-[#C9A84C] hover:bg-[#E8C96A] text-black px-10 py-4 rounded-3xl text-lg font-semibold transition">Get Early Access</a>
     </div>
   </section>
+
+  <!-- PRODUCTS -->
+  <section id="products" class="max-w-7xl mx-auto px-6 py-24">
+    <h2 class="text-5xl font-bold title text-center mb-16">Our Products</h2>
+    
+    <div class="grid md:grid-cols-2 gap-8">
+      <div class="bg-[#112860] border border-white/10 rounded-3xl p-10 hover:border-[#C9A84C]/50 transition">
+        <div class="text-[#C9A84C] text-sm font-mono mb-4">MAIN PRODUCT</div>
+        <h3 class="text-4xl font-bold mb-4">Contract Analysis</h3>
+        <p class="text-gray-300 mb-8">AI agent that analyzes player contracts, identifies risks, flags dangerous clauses, and provides negotiation recommendations for football clubs and businesses.</p>
+        <a href="#" class="text-[#C9A84C] font-medium">Request access →</a>
+      </div>
+
+      <div class="bg-[#112860] border border-white/10 rounded-3xl p-10 hover:border-[#C9A84C]/50 transition">
+        <div class="text-[#C9A84C] text-sm font-mono mb-4">COMING SOON</div>
+        <h3 class="text-4xl font-bold mb-4">English Conversation Agent</h3>
+        <p class="text-gray-300 mb-8">Practice real English conversations with an AI agent. It adapts to your level, corrects pronunciation, and helps you improve fluency naturally.</p>
+        <a href="#" class="text-[#C9A84C] font-medium">Join waitlist →</a>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    function switchLang(lang) {
+      alert(`Language switched to ${lang.toUpperCase()}. Full support coming soon.`);
+    }
+  </script>
 </body>
 </html>
-<h1 style='color: #C9A84C; text-align: center; margin-top: 50px;'>TESTE DE ATUALIZAÇÃO - Dom 21 Jun 2026 16:09:12 -03</h1>
-<h1 style='color:#C9A84C;text-align:center;padding:50px;'>SITE ATUALIZADO - Dom 21 Jun 2026 18:08:56 -03</h1>
-<h1 style='color:#C9A84C; text-align:center; padding:100px; font-size:3rem;'>SITE ATUALIZADO COM SUCESSO - Dom 21 Jun 2026 19:14:19 -03</h1>
