@@ -1,77 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ben435 — Football Management in the New Economy</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-  <style>
-    body { font-family: 'Inter', system_ui, sans-serif; }
-    .title { font-family: 'Space Grotesk', system_ui, sans-serif; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ben435 — Football Management in the New Economy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', system_ui, sans-serif; }
+        .title { font-family: 'Space Grotesk', system_ui, sans-serif; }
+        .nav-active { color: #C9A84C; }
+    </style>
 </head>
 <body class="bg-[#0B1F3A] text-white">
 
-  <!-- Language Switch -->
-  <div class="fixed top-6 right-6 z-50 flex gap-1 bg-white/10 rounded-full p-1">
-    <button onclick="switchLang('en')" class="px-5 py-1.5 text-sm rounded-full hover:bg-white/20 active">EN</button>
-    <button onclick="switchLang('pt')" class="px-5 py-1.5 text-sm rounded-full hover:bg-white/20">PT</button>
-    <button onclick="switchLang('he')" class="px-5 py-1.5 text-sm rounded-full hover:bg-white/20">HE</button>
-  </div>
+    <!-- Navbar -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-[#0B1F3A]/90 backdrop-blur-lg border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <a href="#" class="text-3xl font-bold tracking-tighter title text-[#C9A84C]">BEN435</a>
+            </div>
+            
+            <div class="hidden md:flex items-center gap-8 text-sm">
+                <a href="#products" class="hover:text-[#C9A84C]">Products</a>
+                <a href="#how" class="hover:text-[#C9A84C]">How it works</a>
+                <a href="#about" class="hover:text-[#C9A84C]">About</a>
+            </div>
+            
+            <a href="#access" class="bg-[#C9A84C] hover:bg-[#E8C96A] text-black px-6 py-2.5 rounded-2xl font-medium text-sm">Request Early Access</a>
+        </div>
+    </nav>
 
-  <!-- NAV -->
-  <nav class="fixed top-0 w-full border-b border-white/10 bg-[#0B1F3A]/90 backdrop-blur-lg z-40">
-    <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
-      <a href="#" class="flex items-center gap-3">
-        <span class="text-2xl font-bold tracking-tighter title text-[#C9A84C]">BEN435</span>
-      </a>
-      <div class="flex gap-8 text-sm">
-        <a href="#products" class="hover:text-[#C9A84C]">Products</a>
-        <a href="#about" class="hover:text-[#C9A84C]">About</a>
-      </div>
-      <a href="#access" class="bg-[#C9A84C] text-black px-6 py-2.5 rounded-2xl font-medium">Request Access</a>
-    </div>
-  </nav>
+    <!-- Hero -->
+    <section class="min-h-screen flex items-center pt-20">
+        <div class="max-w-5xl mx-auto px-6 text-center">
+            <h1 class="title text-7xl md:text-8xl font-bold leading-none tracking-tighter mb-8">
+                Football management<br>in the new economy.
+            </h1>
+            <p class="max-w-2xl mx-auto text-2xl text-gray-300 mb-12">
+                Professional tools to analyze contracts and improve English communication for football executives.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#access" class="bg-[#C9A84C] hover:bg-[#E8C96A] text-black px-10 py-4 rounded-3xl text-lg font-semibold transition">Get Early Access</a>
+                <a href="#products" class="border border-white/30 hover:bg-white/5 px-10 py-4 rounded-3xl text-lg font-semibold transition">See Products</a>
+            </div>
+        </div>
+    </section>
 
-  <!-- HERO -->
-  <section class="min-h-screen flex items-center pt-20">
-    <div class="max-w-5xl mx-auto px-6 text-center">
-      <h1 class="title text-7xl md:text-8xl font-bold leading-none tracking-tighter mb-8">
-        Football management<br>in the new economy.
-      </h1>
-      <p class="max-w-2xl mx-auto text-2xl text-gray-300 mb-12">
-        Professional tools to analyze contracts and improve English communication for football executives.
-      </p>
-      <a href="#access" class="inline-block bg-[#C9A84C] hover:bg-[#E8C96A] text-black px-10 py-4 rounded-3xl text-lg font-semibold transition">Get Early Access</a>
-    </div>
-  </section>
+    <!-- Products -->
+    <section id="products" class="max-w-7xl mx-auto px-6 py-24">
+        <h2 class="text-5xl font-bold title text-center mb-16">Our Products</h2>
+        
+        <div class="grid md:grid-cols-2 gap-8">
+            <!-- Contract Analysis -->
+            <div class="bg-[#112860] border border-white/10 rounded-3xl p-10 hover:border-[#C9A84C]/50 transition group">
+                <div class="text-[#C9A84C] text-sm font-mono mb-4">MAIN PRODUCT</div>
+                <h3 class="text-4xl font-bold mb-4">Contract Analysis</h3>
+                <p class="text-gray-300 mb-8">Review and understand football contracts with clarity. Identify important clauses, risks, and get clear recommendations before signing.</p>
+                <a href="#" class="inline-flex items-center text-[#C9A84C] font-medium group-hover:gap-2 transition-all">Request access <span class="ml-1">→</span></a>
+            </div>
 
-  <!-- PRODUCTS -->
-  <section id="products" class="max-w-7xl mx-auto px-6 py-24">
-    <h2 class="text-5xl font-bold title text-center mb-16">Our Products</h2>
-    
-    <div class="grid md:grid-cols-2 gap-8">
-      <div class="bg-[#112860] border border-white/10 rounded-3xl p-10 hover:border-[#C9A84C]/50 transition">
-        <div class="text-[#C9A84C] text-sm font-mono mb-4">MAIN PRODUCT</div>
-        <h3 class="text-4xl font-bold mb-4">Contract Analysis</h3>
-        <p class="text-gray-300 mb-8">Review and understand football contracts with clarity. Identify important clauses, risks, and get clear recommendations before signing.</p>
-        <a href="#" class="text-[#C9A84C] font-medium">Request access →</a>
-      </div>
+            <!-- English Conversation -->
+            <div class="bg-[#112860] border border-white/10 rounded-3xl p-10 hover:border-[#C9A84C]/50 transition group">
+                <div class="text-[#C9A84C] text-sm font-mono mb-4">COMING SOON</div>
+                <h3 class="text-4xl font-bold mb-4">English Conversation</h3>
+                <p class="text-gray-300 mb-8">Practice real conversations in English. Improve your fluency and confidence for meetings, negotiations, and international communication.</p>
+                <a href="#" class="inline-flex items-center text-[#C9A84C] font-medium group-hover:gap-2 transition-all">Join waitlist <span class="ml-1">→</span></a>
+            </div>
+        </div>
+    </section>
 
-      <div class="bg-[#112860] border border-white/10 rounded-3xl p-10 hover:border-[#C9A84C]/50 transition">
-        <div class="text-[#C9A84C] text-sm font-mono mb-4">COMING SOON</div>
-        <h3 class="text-4xl font-bold mb-4">English Conversation</h3>
-        <p class="text-gray-300 mb-8">Practice real conversations in English. Improve your fluency and confidence for meetings, negotiations, and international communication.</p>
-        <a href="#" class="text-[#C9A84C] font-medium">Join waitlist →</a>
-      </div>
-    </div>
-  </section>
+    <!-- How it works -->
+    <section id="how" class="bg-black py-24">
+        <div class="max-w-5xl mx-auto px-6">
+            <h2 class="text-5xl font-bold title text-center mb-16">How it works</h2>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <div class="w-14 h-14 bg-[#C9A84C] text-black rounded-2xl flex items-center justify-center mx-auto mb-6 text-2xl font-bold">1</div>
+                    <h4 class="text-xl font-semibold mb-3">Upload your contract</h4>
+                    <p class="text-gray-400">Simply upload the contract document.</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-14 h-14 bg-[#C9A84C] text-black rounded-2xl flex items-center justify-center mx-auto mb-6 text-2xl font-bold">2</div>
+                    <h4 class="text-xl font-semibold mb-3">Get clear analysis</h4>
+                    <p class="text-gray-400">Receive a clear summary of risks and important clauses.</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-14 h-14 bg-[#C9A84C] text-black rounded-2xl flex items-center justify-center mx-auto mb-6 text-2xl font-bold">3</div>
+                    <h4 class="text-xl font-semibold mb-3">Make better decisions</h4>
+                    <p class="text-gray-400">Use the recommendations to negotiate with confidence.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <script>
-    function switchLang(lang) {
-      alert(`Language switched to ${lang.toUpperCase()}. Full support coming soon.`);
-    }
-  </script>
+    <!-- Final CTA -->
+    <section id="access" class="py-24 text-center">
+        <div class="max-w-2xl mx-auto px-6">
+            <h2 class="text-5xl font-bold mb-6">Ready to get started?</h2>
+            <p class="text-gray-400 mb-8">Be among the first to access professional tools for football management.</p>
+            
+            <form class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+                <input type="email" placeholder="your@email.com" class="flex-1 bg-white/5 border border-white/20 px-5 py-3.5 rounded-2xl text-white placeholder:text-gray-400">
+                <button type="submit" class="bg-[#C9A84C] text-black px-8 rounded-2xl font-semibold">Request Access</button>
+            </form>
+        </div>
+    </section>
+
+    <script>
+        function switchLang(lang) {
+            alert(`Language switched to ${lang.toUpperCase()}. Full support coming soon.`);
+        }
+    </script>
 </body>
 </html>
