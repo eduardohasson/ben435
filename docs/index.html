@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ben435 • Inglês Inteligente</title>
+    <title>Ben435 • Estudar Inglês</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
@@ -12,7 +12,7 @@
     <!-- Navbar -->
     <nav class="border-b">
         <div class="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between">
-            <div class="flex items-center gap-3">
+            <div class="flex items-center gap-3 cursor-pointer" onclick="window.scrollTo(0,0)">
                 <div class="w-8 h-8 bg-black rounded-xl flex items-center justify-center">
                     <span class="font-bold text-white text-xl">B</span>
                 </div>
@@ -25,20 +25,18 @@
                 <a href="#preco" class="hover:text-gray-600 transition">Preço</a>
                 <a href="#teste" class="hover:text-gray-600 transition">Testar</a>
 
-                <!-- Seletor de Idiomas (estilo base44) -->
+                <!-- Seletor de Idiomas -->
                 <div class="relative group">
                     <button class="flex items-center gap-2 px-3 py-1.5 rounded-full hover:bg-gray-100 transition text-sm">
                         <i class="fas fa-globe text-lg"></i>
                         <span id="current-lang">Português</span>
-                        <i class="fas fa-chevron-down text-xs ml-1"></i>
                     </button>
-                    
                     <div class="absolute right-0 mt-2 w-44 bg-white border rounded-2xl shadow-lg py-2 hidden group-hover:block z-50">
-                        <a href="#" onclick="switchLanguage('en')" class="flex items-center gap-3 px-4 py-2 hover:bg-gray-50 text-sm">
-                            <span>🇬🇧</span> <span>English</span>
-                        </a>
                         <a href="#" onclick="switchLanguage('pt')" class="flex items-center gap-3 px-4 py-2 hover:bg-gray-50 text-sm">
                             <span>🇧🇷</span> <span>Português</span>
+                        </a>
+                        <a href="#" onclick="switchLanguage('en')" class="flex items-center gap-3 px-4 py-2 hover:bg-gray-50 text-sm">
+                            <span>🇬🇧</span> <span>English</span>
                         </a>
                         <a href="#" onclick="switchLanguage('he')" class="flex items-center gap-3 px-4 py-2 hover:bg-gray-50 text-sm">
                             <span>🇮🇱</span> <span>עברית</span>
@@ -55,7 +53,7 @@
             Estude inglês de forma inteligente.
         </h1>
         <p class="max-w-2xl mx-auto text-2xl text-gray-600 mb-10">
-            Melhore sua fluência conversando com um agente feito para quem quer falar inglês de verdade.
+            Melhore sua fluência conversando com um método feito para quem quer falar inglês de verdade.
         </p>
         <a href="#teste" class="inline-block bg-black hover:bg-gray-800 transition text-white font-medium px-8 py-4 rounded-2xl text-lg">
             Iniciar Teste
@@ -69,8 +67,8 @@
         <div class="grid md:grid-cols-2 gap-6">
             <div class="border rounded-3xl p-8">
                 <div class="inline-block px-3 py-1 bg-gray-100 text-sm rounded-full mb-4">Disponível agora</div>
-                <h3 class="text-3xl font-semibold mb-4">Agente de Inglês</h3>
-                <p class="text-gray-600 mb-6">Converse em inglês naturalmente. Receba correções inteligentes e melhore sua fluência de forma prática.</p>
+                <h3 class="text-3xl font-semibold mb-4">Estudar Inglês</h3>
+                <p class="text-gray-600 mb-6">Converse em inglês de forma natural e melhore sua fluência com correções inteligentes.</p>
                 <a href="#teste" class="text-black font-medium flex items-center gap-2">
                     Testar agora <i class="fas fa-arrow-right"></i>
                 </a>
@@ -79,7 +77,7 @@
             <div class="border rounded-3xl p-8 bg-gray-50">
                 <div class="inline-block px-3 py-1 bg-gray-200 text-sm rounded-full mb-4">Em breve</div>
                 <h3 class="text-3xl font-semibold mb-4">Análise de Contratos</h3>
-                <p class="text-gray-600">Análise inteligente de contratos focada na indústria do futebol.</p>
+                <p class="text-gray-600">Análise inteligente de contratos para a indústria do futebol.</p>
             </div>
         </div>
     </section>
@@ -87,28 +85,50 @@
     <!-- Solução -->
     <section id="solucao" class="max-w-6xl mx-auto px-6 py-16 border-t bg-gray-50">
         <div class="max-w-3xl mx-auto text-center">
-            <h2 class="text-4xl font-semibold tracking-tight mb-6">Uma forma mais inteligente de aprender inglês</h2>
-            <p class="text-xl text-gray-600">Nosso agente foi feito para te ajudar a ganhar fluência real através de conversas naturais e correções úteis.</p>
+            <h2 class="text-4xl font-semibold tracking-tight mb-6">Nossa plataforma foi feita para te ajudar</h2>
+            <p class="text-xl text-gray-600">Ajudamos você a ganhar fluência real em inglês através de conversas naturais, sem pressão e no seu ritmo.</p>
         </div>
     </section>
 
     <!-- Preço -->
     <section id="preco" class="max-w-6xl mx-auto px-6 py-16 border-t">
         <h2 class="text-4xl font-semibold tracking-tight mb-4 text-center">Preço simples e transparente</h2>
-        <p class="text-center text-gray-600 mb-12">Pague apenas pelo que usar. Sem mensalidade.</p>
+        <p class="text-center text-gray-600 mb-12">Pague apenas pelo que usar.</p>
         
         <div class="max-w-md mx-auto border rounded-3xl p-8">
-            <h3 class="text-2xl font-semibold mb-2">Pay as you go</h3>
-            <p class="text-gray-600 mb-6">Cobramos por minuto de conversa ou por análise de contrato.</p>
+            <h3 class="text-2xl font-semibold mb-6">Pay as you go</h3>
             
-            <div class="space-y-3 text-sm">
-                <div class="flex justify-between border-b pb-3">
-                    <span>Agente de Inglês</span>
-                    <span class="font-medium">R$ 0,80 / minuto</span>
+            <div class="space-y-4 text-sm">
+                <div class="flex justify-between items-center border-b pb-4">
+                    <div>
+                        <div class="font-medium">Estudar Inglês por mensagem</div>
+                        <div class="text-xs text-gray-500">Nível básico</div>
+                    </div>
+                    <div class="font-semibold">R$ 0,80 / mensagem</div>
                 </div>
-                <div class="flex justify-between border-b pb-3">
-                    <span>Análise de Contrato</span>
-                    <span class="font-medium">R$ 12,00 / contrato</span>
+                
+                <div class="flex justify-between items-center border-b pb-4">
+                    <div>
+                        <div class="font-medium">Estudar Inglês por voz</div>
+                        <div class="text-xs text-gray-500">Nível intermediário</div>
+                    </div>
+                    <div class="font-semibold">R$ 2,50 / minuto</div>
+                </div>
+                
+                <div class="flex justify-between items-center border-b pb-4">
+                    <div>
+                        <div class="font-medium">Estudar Inglês por voz</div>
+                        <div class="text-xs text-gray-500">Nível avançado</div>
+                    </div>
+                    <div class="font-semibold">R$ 3,50 / minuto</div>
+                </div>
+
+                <div class="flex justify-between items-center pt-2">
+                    <div>
+                        <div class="font-medium">Análise de Contrato</div>
+                        <div class="text-xs text-gray-500">Indústria do futebol</div>
+                    </div>
+                    <div class="font-semibold">R$ 39 / contrato</div>
                 </div>
             </div>
         </div>
@@ -117,8 +137,8 @@
     <!-- Chat -->
     <section id="teste" class="max-w-4xl mx-auto px-6 py-16 border-t">
         <div class="text-center mb-10">
-            <h2 class="text-4xl font-semibold tracking-tight mb-3">Teste o Agente de Inglês</h2>
-            <p class="text-gray-600">Converse abaixo. Esta é uma versão de teste.</p>
+            <h2 class="text-4xl font-semibold tracking-tight mb-3">Teste o Estudar Inglês</h2>
+            <p class="text-gray-600">Converse abaixo e veja como funciona.</p>
         </div>
 
         <div class="border rounded-3xl p-6 bg-white">
