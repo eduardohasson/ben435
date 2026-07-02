@@ -1,0 +1,5 @@
+plugins: []
+theme: null
+exclude:
+  - ../backend
+  - ../venv
