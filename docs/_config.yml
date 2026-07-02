@@ -3,3 +3,4 @@ theme: null
 exclude:
   - ../backend
   - ../venv
+  - node_modules
