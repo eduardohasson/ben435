@@ -1,105 +1,502 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ben435 • Estudar Inglês</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ben435 — Plataforma de Gestão para Clubes de Futebol</title>
+  <meta name="description" content="Ben435: análise inteligente de contratos, controle financeiro e painel do proprietário para clubes de futebol. Tecnologia construída a partir de dores reais de gestão." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --navy: #0B1F3A;
+      --navy2: #0D2549;
+      --gold: #C9A84C;
+      --gold2: #E8C96A;
+      --white: #F5F2EC;
+      --gray: #8A9BB0;
+      --light: #F8F6F1;
+      --card: #122B4A;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--navy);
+      color: var(--white);
+      font-family: 'DM Sans', system-ui, sans-serif;
+      line-height: 1.55;
+      overflow-x: hidden;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1rem 3.5rem;
+      background: rgba(11,31,58,0.92);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(201,168,76,0.18);
+    }
+    .logo {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.85rem;
+      letter-spacing: 0.14em;
+      color: var(--gold);
+    }
+    .nav-links {
+      display: flex; gap: 2rem; align-items: center;
+      font-size: 0.9rem; color: var(--gray);
+    }
+    .nav-links a:hover { color: var(--gold); }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      padding: 0.7rem 1.5rem;
+      font-weight: 600; font-size: 0.9rem;
+      border: none; cursor: pointer;
+      transition: all 0.2s;
+    }
+    .btn-gold {
+      background: var(--gold); color: var(--navy);
+    }
+    .btn-gold:hover { background: var(--gold2); transform: translateY(-1px); }
+    .btn-outline {
+      background: transparent;
+      border: 1px solid rgba(201,168,76,0.5);
+      color: var(--gold);
+    }
+    .btn-outline:hover { border-color: var(--gold); background: rgba(201,168,76,0.08); }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      display: flex; align-items: center;
+      padding: 8rem 3.5rem 5rem;
+      position: relative;
+    }
+    .hero-inner { max-width: 720px; }
+    .eyebrow {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 1.2rem;
+    }
+    .hero h1 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(3.2rem, 7vw, 5.2rem);
+      line-height: 0.95;
+      letter-spacing: 0.02em;
+      margin-bottom: 1.4rem;
+    }
+    .hero h1 span { color: var(--gold); }
+    .hero-sub {
+      font-size: 1.15rem;
+      color: var(--gray);
+      max-width: 540px;
+      margin-bottom: 2.2rem;
+    }
+    .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+    /* STATS */
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.2rem;
+      padding: 0 3.5rem 4rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .stat-card {
+      background: var(--card);
+      border: 1px solid rgba(201,168,76,0.15);
+      padding: 1.4rem 1.2rem;
+      text-align: center;
+    }
+    .stat-num {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2.2rem;
+      color: var(--gold);
+      letter-spacing: 0.04em;
+    }
+    .stat-label {
+      font-size: 0.82rem;
+      color: var(--gray);
+      margin-top: 0.3rem;
+    }
+
+    /* SECTIONS */
+    section { padding: 5rem 3.5rem; }
+    .section-inner { max-width: 1100px; margin: 0 auto; }
+    .section-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2.4rem;
+      letter-spacing: 0.04em;
+      margin-bottom: 0.6rem;
+    }
+    .section-sub {
+      color: var(--gray);
+      font-size: 1.05rem;
+      max-width: 560px;
+      margin-bottom: 2.8rem;
+    }
+
+    /* PROBLEM */
+    .problem-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.3rem;
+    }
+    .problem-card {
+      background: var(--card);
+      border: 1px solid rgba(201,168,76,0.12);
+      padding: 1.6rem 1.4rem;
+    }
+    .problem-card h3 {
+      font-size: 1.05rem;
+      margin-bottom: 0.6rem;
+      color: var(--gold);
+    }
+    .problem-card p {
+      font-size: 0.92rem;
+      color: var(--gray);
+    }
+
+    /* MODULES */
+    .modules {
+      background: var(--navy2);
+    }
+    .modules-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.4rem;
+    }
+    .module-card {
+      background: var(--navy);
+      border: 1px solid rgba(201,168,76,0.18);
+      padding: 2rem 1.6rem;
+      transition: border-color 0.2s;
+    }
+    .module-card:hover { border-color: var(--gold); }
+    .module-num {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.75rem;
+      color: var(--gold);
+      letter-spacing: 0.1em;
+      margin-bottom: 0.8rem;
+    }
+    .module-card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 0.7rem;
+    }
+    .module-card p {
+      font-size: 0.95rem;
+      color: var(--gray);
+    }
+
+    /* PRICING */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.15fr;
+      gap: 1.5rem;
+      align-items: stretch;
+    }
+    .price-card {
+      background: var(--card);
+      border: 1px solid rgba(201,168,76,0.2);
+      padding: 2.2rem 1.8rem;
+    }
+    .price-card.featured {
+      border-color: var(--gold);
+      position: relative;
+    }
+    .price-badge {
+      position: absolute;
+      top: -12px; right: 1.5rem;
+      background: var(--gold);
+      color: var(--navy);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      padding: 0.3rem 0.8rem;
+      text-transform: uppercase;
+    }
+    .price-name {
+      font-size: 0.9rem;
+      color: var(--gray);
+      margin-bottom: 0.4rem;
+    }
+    .price-value {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 3rem;
+      color: var(--gold);
+      letter-spacing: 0.03em;
+      line-height: 1;
+    }
+    .price-value span {
+      font-size: 1.1rem;
+      color: var(--gray);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 400;
+    }
+    .price-desc {
+      font-size: 0.9rem;
+      color: var(--gray);
+      margin: 0.8rem 0 1.4rem;
+    }
+    .price-list {
+      list-style: none;
+      margin-bottom: 1.8rem;
+    }
+    .price-list li {
+      font-size: 0.92rem;
+      padding: 0.4rem 0;
+      color: var(--white);
+      display: flex;
+      gap: 0.6rem;
+    }
+    .price-list li::before {
+      content: "✓";
+      color: var(--gold);
+      font-weight: 700;
+    }
+
+    /* CASE */
+    .case-box {
+      background: var(--card);
+      border-left: 4px solid var(--gold);
+      padding: 2rem 2rem;
+      margin-top: 1rem;
+    }
+    .case-box h3 {
+      font-size: 1.15rem;
+      margin-bottom: 1rem;
+      color: var(--gold);
+    }
+    .case-facts {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.8rem 1.5rem;
+    }
+    .case-facts li {
+      font-size: 0.92rem;
+      color: var(--gray);
+      list-style: none;
+      padding-left: 1rem;
+      position: relative;
+    }
+    .case-facts li::before {
+      content: "▸";
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+    }
+
+    /* CTA */
+    .cta {
+      text-align: center;
+      padding: 5rem 3.5rem;
+      background: linear-gradient(180deg, var(--navy2) 0%, var(--navy) 100%);
+    }
+    .cta h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2.6rem;
+      letter-spacing: 0.04em;
+      margin-bottom: 0.8rem;
+    }
+    .cta p {
+      color: var(--gray);
+      max-width: 480px;
+      margin: 0 auto 2rem;
+    }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid rgba(201,168,76,0.15);
+      padding: 2rem 3.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.85rem;
+      color: var(--gray);
+    }
+    footer .logo { font-size: 1.4rem; }
+
+    @media (max-width: 900px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { display: none; }
+      .hero, section, .stats, .cta, footer { padding-left: 1.5rem; padding-right: 1.5rem; }
+      .hero { min-height: auto; padding-top: 7rem; }
+      .stats { grid-template-columns: 1fr 1fr; }
+      .problem-grid, .modules-grid, .pricing-grid, .case-facts { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
-<body class="bg-white text-black">
+<body>
 
-    <!-- Navbar -->
-    <nav class="border-b">
-        <div class="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between">
-            <div onclick="window.scrollTo(0,0)" class="flex items-center gap-3 cursor-pointer">
-                <span class="font-semibold text-2xl tracking-tight">Ben435</span>
-            </div>
-            <div class="flex items-center gap-8 text-sm font-medium">
-                <a href="#produtos" class="hover:text-gray-600 transition">Produtos</a>
-                <a href="#solucao" class="hover:text-gray-600 transition">Solução</a>
-                <a href="#preco" class="hover:text-gray-600 transition">Preço</a>
-                <a href="#teste" class="hover:text-gray-600 transition">Testar</a>
-            </div>
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="logo">BEN435</a>
+    <div class="nav-links">
+      <a href="#problema">Problema</a>
+      <a href="#solucao">Solução</a>
+      <a href="#preco">Preço</a>
+      <a href="#caso">Caso Real</a>
+    </div>
+    <a href="#preco" class="btn btn-gold">Começar agora</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <p class="eyebrow">Plataforma de Gestão para Clubes de Futebol</p>
+      <h1>Controle real sobre<br /><span>contratos e finanças</span></h1>
+      <p class="hero-sub">
+        A Ben435 analisa contratos de atletas, identifica cláusulas de risco e dá ao proprietário visibilidade total sobre o clube — antes que o prejuízo aconteça.
+      </p>
+      <div class="hero-actions">
+        <a href="#preco" class="btn btn-gold">Ver preços em USD</a>
+        <a href="#caso" class="btn btn-outline">Ver caso real 2022</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <div class="stats">
+    <div class="stat-card">
+      <div class="stat-num">700+</div>
+      <div class="stat-label">Clubes profissionais no Brasil</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num">USD</div>
+      <div class="stat-label">Moeda de cobrança</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num">2022</div>
+      <div class="stat-label">Validação real em campo</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num">3</div>
+      <div class="stat-label">Módulos principais</div>
+    </div>
+  </div>
+
+  <!-- PROBLEMA -->
+  <section id="problema">
+    <div class="section-inner">
+      <h2 class="section-title">O problema é estrutural</h2>
+      <p class="section-sub">A maioria dos clubes brasileiros ainda opera sem sistema profissional de gestão de contratos e finanças.</p>
+      <div class="problem-grid">
+        <div class="problem-card">
+          <h3>Risco contratual oculto</h3>
+          <p>Cláusulas de devolução em “perfeitas condições”, multas desproporcionais e recalls agressivos passam despercebidos na leitura manual.</p>
         </div>
-    </nav>
-
-    <!-- Hero -->
-    <section class="max-w-4xl mx-auto px-6 pt-20 pb-16 text-center">
-        <h1 class="text-6xl font-semibold tracking-tighter mb-6 leading-none">
-            Estude inglês de forma inteligente.
-        </h1>
-        <p class="max-w-2xl mx-auto text-2xl text-gray-600 mb-10">
-            Melhore sua fluência conversando com um método feito para quem quer falar inglês de verdade.
-        </p>
-        <a href="#teste" class="inline-block bg-black hover:bg-gray-800 transition text-white font-medium px-8 py-4 rounded-2xl text-lg">
-            Iniciar Teste
-        </a>
-    </section>
-
-    <!-- Chat -->
-    <section id="teste" class="max-w-4xl mx-auto px-6 py-16 border-t">
-        <div class="text-center mb-10">
-            <h2 class="text-4xl font-semibold tracking-tight mb-3">Testar</h2>
-            <p class="text-gray-600">Converse abaixo e veja como funciona.</p>
+        <div class="problem-card">
+          <h3>Sem controle financeiro</h3>
+          <p>Mesmo clubes de Série A e B gerenciam sócio-torcedor, bilheteria e patrocínio de forma fragmentada ou manual.</p>
         </div>
-
-        <div class="border rounded-3xl p-6 bg-white">
-            <div id="chat-box" class="h-[420px] overflow-y-auto mb-4 space-y-4 pr-2"></div>
-            
-            <div class="flex gap-3">
-                <input id="chat-input" type="text" placeholder="Digite sua mensagem em inglês..." 
-                       class="flex-1 border rounded-2xl px-5 py-3 focus:outline-none focus:border-black">
-                <button onclick="sendMessage()" 
-                        class="bg-black hover:bg-gray-800 transition px-8 rounded-2xl text-white font-medium">
-                    Enviar
-                </button>
-            </div>
+        <div class="problem-card">
+          <h3>Assimetria de negociação</h3>
+          <p>Clubes menores aceitam 20–30% de direitos econômicos como se fosse padrão de mercado — por falta de ferramenta e repertório.</p>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <footer class="border-t py-8 text-center text-sm text-gray-500">
-        © 2026 Ben435. Todos os direitos reservados.
-    </footer>
+  <!-- SOLUÇÃO -->
+  <section class="modules" id="solucao">
+    <div class="section-inner">
+      <h2 class="section-title">A solução Ben435</h2>
+      <p class="section-sub">Três módulos integrados para dar controle real ao clube e ao proprietário.</p>
+      <div class="modules-grid">
+        <div class="module-card">
+          <div class="module-num">01 — CONTRATOS</div>
+          <h3>Análise de Contratos</h3>
+          <p>A plataforma lê e analisa contratos de atletas, empréstimos e direitos de imagem. Identifica cláusulas de risco, obrigações financeiras e pontos de negociação — antes da assinatura.</p>
+        </div>
+        <div class="module-card">
+          <div class="module-num">02 — FINANCEIRO</div>
+          <h3>Sistema Financeiro</h3>
+          <p>Controle especializado para clubes: salários, benefícios, direitos de imagem, cotas de TV, despesas operacionais e projeções de sustentabilidade.</p>
+        </div>
+        <div class="module-card">
+          <div class="module-num">03 — PROPRIETÁRIO</div>
+          <h3>Painel do Proprietário</h3>
+          <p>Visibilidade em tempo real sobre contratos, finanças e ocorrências. Alertas automáticos de vencimentos e irregularidades — protegendo patrimônio e reputação.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <script>
-        const chatBox = document.getElementById('chat-box');
-        const input = document.getElementById('chat-input');
+  <!-- PREÇO -->
+  <section id="preco">
+    <div class="section-inner">
+      <h2 class="section-title">Preço simples e transparente</h2>
+      <p class="section-sub">Cobrança em dólar. Você paga pelo que usa — sem mensalidade fixa obrigatória.</p>
+      <div class="pricing-grid">
+        <div class="price-card">
+          <div class="price-name">Análise avulsa</div>
+          <div class="price-value">USD 25–45 <span>/ contrato</span></div>
+          <p class="price-desc">Ideal para analisar um contrato específico antes de assinar.</p>
+          <ul class="price-list">
+            <li>Análise de cláusulas de risco</li>
+            <li>Relatório com pontos críticos</li>
+            <li>Recomendações práticas</li>
+            <li>Entrega rápida</li>
+          </ul>
+          <a href="mailto:contato@ben435.com?subject=Análise de contrato" class="btn btn-outline" style="width:100%">Solicitar análise</a>
+        </div>
+        <div class="price-card featured">
+          <div class="price-badge">Recomendado</div>
+          <div class="price-name">Acesso mensal completo</div>
+          <div class="price-value">USD 89–149 <span>/ mês</span></div>
+          <p class="price-desc">Gestão de contratos + financeiro + painel do proprietário.</p>
+          <ul class="price-list">
+            <li>Análises ilimitadas de contratos</li>
+            <li>Sistema financeiro do clube</li>
+            <li>Painel do proprietário em tempo real</li>
+            <li>Alertas de vencimento e risco</li>
+            <li>Suporte prioritário</li>
+          </ul>
+          <a href="mailto:contato@ben435.com?subject=Acesso mensal Ben435" class="btn btn-gold" style="width:100%">Falar com a equipe</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        function addMessage(role, content) {
-            const div = document.createElement('div');
-            if (role === 'user') {
-                div.className = 'flex justify-end';
-                div.innerHTML = `<div class="max-w-[75%] bg-black text-white px-4 py-3 rounded-3xl rounded-br-none">${content}</div>`;
-            } else {
-                div.className = 'flex justify-start';
-                div.innerHTML = `<div class="max-w-[75%] bg-gray-100 px-4 py-3 rounded-3xl rounded-bl-none">${content}</div>`;
-            }
-            chatBox.appendChild(div);
-            chatBox.scrollTop = chatBox.scrollHeight;
-        }
+  <!-- CASO REAL -->
+  <section id="caso">
+    <div class="section-inner">
+      <h2 class="section-title">Caso real — 2022</h2>
+      <p class="section-sub">A plataforma já foi usada na gestão de um clube profissional. Os resultados comprovam que funciona.</p>
+      <div class="case-box">
+        <h3>O que foi identificado e resolvido</h3>
+        <ul class="case-facts">
+          <li>22 contratos de atletas analisados na temporada</li>
+          <li>Cláusula de devolução em “perfeitas condições” sem ressalva sobre estado físico admissional</li>
+          <li>Multa de R$ 800.000 por partida identificada antes da competição</li>
+          <li>Uso indevido do plano de saúde para lesões anteriores ao contrato</li>
+          <li>Controle de gastos em clube com orçamento anual abaixo de R$ 100.000</li>
+          <li>Atleta com problema físico preexistente detectado antes da assinatura</li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
-        function sendMessage() {
-            const message = input.value.trim();
-            if (!message) return;
+  <!-- CTA FINAL -->
+  <section class="cta">
+    <h2>Pronto para ter controle real?</h2>
+    <p>A Ben435 foi construída por quem viveu as dores da gestão de clube. Agora está pronta para escalar.</p>
+    <a href="mailto:contato@ben435.com" class="btn btn-gold">Falar com Eduardo Hasson</a>
+  </section>
 
-            addMessage('user', message);
-            input.value = '';
-
-            setTimeout(() => {
-                const reply = `Você disse: "${message}". Essa é uma resposta de teste.`;
-                addMessage('assistant', reply);
-            }, 700);
-        }
-
-        setTimeout(() => {
-            addMessage('assistant', 'Olá! Digite algo em inglês para começar.');
-        }, 800);
-
-        input.addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') sendMessage();
-        });
-    </script>
+  <!-- FOOTER -->
+  <footer>
+    <div class="logo">BEN435</div>
+    <div>© 2026 Ben435 · Plataforma de Gestão para Clubes de Futebol</div>
+  </footer>
 
 </body>
 </html>
