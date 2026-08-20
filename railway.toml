@@ -1,0 +1,8 @@
+[build]
+builder = "NIXPACKS"
+buildCommand = "NITRO_PRESET=node-server npm run build"
+
+[deploy]
+startCommand = "node .output/server/index.mjs"
+healthcheckPath = "/"
+restartPolicyType = "ON_FAILURE"
