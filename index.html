@@ -1,1 +1,168 @@
-<placeholder>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Ben435 — Contract risk analysis for football clubs</title>
+<meta name="description" content="Ben435 flags operational risk in player contracts. Not a legal opinion. USD 30 per analysis, USD 300 per month."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;600;700&family=DM+Mono:wght@500&display=swap" rel="stylesheet"/>
+<style>
+:root{--navy:#0B1F3A;--navy2:#0D2549;--gold:#C9A84C;--gold2:#E8C96A;--paper:#F5F2EC;--mist:#8A9BB0;--card:#122B4A}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--navy);color:var(--paper);font-family:"DM Sans",system-ui,sans-serif;line-height:1.55}
+a{color:inherit;text-decoration:none}
+.legal{background:#081628;border-bottom:1px solid rgba(201,168,76,.18);color:var(--mist);font-size:.78rem;text-align:center;padding:.55rem 1.2rem}
+nav{position:sticky;top:0;z-index:40;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.85rem 8vw;background:rgba(11,31,58,.94);backdrop-filter:blur(12px);border-bottom:1px solid rgba(201,168,76,.18)}
+.logo{font-family:"Bebas Neue",sans-serif;font-size:1.8rem;letter-spacing:.14em;color:var(--gold)}
+.nav-links{display:flex;gap:1.5rem;font-size:.88rem;color:var(--mist)}
+.nav-links a:hover{color:var(--gold)}
+.lang{display:flex;border:1px solid rgba(201,168,76,.35)}
+.lang button{background:0;border:0;color:var(--mist);font:600 .75rem/1 "DM Mono",monospace;padding:.45rem .7rem;cursor:pointer}
+.lang button.on{background:var(--gold);color:var(--navy)}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:.7rem 1.35rem;font-weight:600;font-size:.9rem}
+.btn-gold{background:var(--gold);color:var(--navy)}
+.btn-outline{border:1px solid rgba(201,168,76,.5);color:var(--gold)}
+.wrap{width:min(1100px,calc(100% - 8vw));margin:0 auto}
+.hero{padding:5rem 0 3rem}
+h1{font-family:"Bebas Neue",sans-serif;font-size:clamp(2.8rem,7vw,4.8rem);line-height:.94;letter-spacing:.02em;margin:.8rem 0 1.1rem}
+h1 span{color:var(--gold)}
+.eyebrow{font-family:"DM Mono",monospace;font-size:.74rem;letter-spacing:.16em;color:var(--gold);text-transform:uppercase}
+.lead{font-size:1.1rem;color:var(--mist);max-width:560px;margin-bottom:1.6rem}
+.row{display:flex;gap:.8rem;flex-wrap:wrap}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;padding-bottom:3rem}
+.stat,.card,.price{background:var(--card);border:1px solid rgba(201,168,76,.14);padding:1.35rem 1.2rem}
+.stat{text-align:center}
+.num{font-family:"Bebas Neue",sans-serif;font-size:2.1rem;color:var(--gold)}
+.lbl,.muted{color:var(--mist);font-size:.86rem}
+section{padding:3.6rem 0}
+h2{font-family:"Bebas Neue",sans-serif;font-size:2.2rem;letter-spacing:.04em}
+.sub{color:var(--mist);max-width:540px;margin:.45rem 0 1.8rem}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.step{font-family:"DM Mono",monospace;font-size:.72rem;color:var(--gold);letter-spacing:.12em;margin-bottom:.55rem}
+.how{background:var(--navy2)}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem}
+.price.feat{border-color:var(--gold);position:relative}
+.badge{position:absolute;top:-10px;right:1rem;background:var(--gold);color:var(--navy);font-size:.68rem;font-weight:700;letter-spacing:.08em;padding:.25rem .65rem;text-transform:uppercase}
+.val{font-family:"Bebas Neue",sans-serif;font-size:3rem;color:var(--gold);line-height:1;margin:.25rem 0 .6rem}
+.val small{font-size:1rem;color:var(--mist);font-family:"DM Sans",sans-serif}
+ul{list-style:none;margin-top:.7rem}
+li{padding:.32rem 0}
+li::before{content:"\2713 ";color:var(--gold);font-weight:700}
+.case{background:var(--card);border-left:4px solid var(--gold);padding:1.6rem}
+.facts{display:grid;grid-template-columns:1fr 1fr;gap:.65rem 1.2rem;margin-top:.8rem}
+.facts li{color:var(--mist);padding-left:.8rem;position:relative}
+.facts li::before{content:"\25B8";position:absolute;left:0}
+.cta{text-align:center;padding:4rem 0}
+footer{border-top:1px solid rgba(201,168,76,.15);padding:1.4rem 8vw;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;color:var(--mist);font-size:.82rem}
+@media(max-width:900px){.nav-links{display:none}.stats,.g3,.g2,.facts{grid-template-columns:1fr}nav,footer{padding-left:1.3rem;padding-right:1.3rem}.wrap{width:calc(100% - 2.6rem)}}
+</style>
+</head>
+<body>
+<div class="legal" data-i="legal">A Ben435 realiza análise operacional de risco contratual. Não é escritório de advocacia e não substitui advogado.</div>
+<nav>
+  <a class="logo" href="#">BEN435</a>
+  <div class="nav-links">
+    <a href="#como" data-i="n1">Como funciona</a>
+    <a href="#preco" data-i="n2">Preço</a>
+    <a href="#caso" data-i="n3">Caso 2022</a>
+  </div>
+  <div class="lang">
+    <button type="button" id="pt" class="on" onclick="L('pt')">PT</button>
+    <button type="button" id="en" onclick="L('en')">EN</button>
+  </div>
+</nav>
+<div class="wrap">
+  <section class="hero">
+    <p class="eyebrow" data-i="k">Análise de risco contratual para clubes</p>
+    <h1><span data-i="h1">Enxergue o risco do contrato</span><br><span data-i="h2">antes de assinar</span></h1>
+    <p class="lead" data-i="ld">A Ben435 lê contratos de atletas, empréstimos e direitos de imagem e marca cláusulas que historicamente geram prejuízo. Ferramenta de gestão — não parecer de advogado.</p>
+    <div class="row">
+      <a class="btn btn-gold" href="#preco" data-i="b1">Ver preço</a>
+      <a class="btn btn-outline" href="#caso" data-i="b2">Ver caso 2022</a>
+    </div>
+  </section>
+  <div class="stats">
+    <div class="stat"><div class="num">700+</div><div class="lbl" data-i="s1">Clubes profissionais no Brasil</div></div>
+    <div class="stat"><div class="num">USD</div><div class="lbl" data-i="s2">Cobrança em dólar americano</div></div>
+    <div class="stat"><div class="num">2022</div><div class="lbl" data-i="s3">Validação real em campo</div></div>
+  </div>
+</div>
+<section id="problema"><div class="wrap">
+  <h2 data-i="pT">O risco está no texto</h2>
+  <p class="sub" data-i="pL">A maior parte do prejuízo de um clube menor não começa no gramado. Começa numa cláusula que ningém isolou.</p>
+  <div class="g3">
+    <article class="card"><h3 data-i="c1t">Cláusula oculta</h3><p class="muted" data-i="c1b">Devolução em “perfeitas condições”, multa por partida e recall sem carência passam na leitura corrida.</p></article>
+    <article class="card"><h3 data-i="c2t">Leitura manual falha</h3><p class="muted" data-i="c2b">Dirigente e futebol revisam o PDF à noite. O padrão se perde de um contrato para o outro.</p></article>
+    <article class="card"><h3 data-i="c3t">Assimetria de mesa</h3><p class="muted" data-i="c3b">Clubes menores aceitam 20–30% de direitos econômicos como se fosse padrão. Falta repertório, não vontade.</p></article>
+  </div>
+</div></section>
+<section class="how" id="como"><div class="wrap">
+  <h2 data-i="hT">Como a Ben435 trabalha</h2>
+  <p class="sub" data-i="hL">Três passos. Sem tribunal, sem petição, sem substituição do jurídico do clube.</p>
+  <div class="g3">
+    <article class="card"><div class="step">01</div><h3 data-i="t1">Envie o contrato</h3><p class="muted" data-i="t1b">PDF ou Word — atleta, empréstimo ou imagem.</p></article>
+    <article class="card"><div class="step">02</div><h3 data-i="t2">Leitura de risco</h3><p class="muted" data-i="t2b">Marca cláusulas financeiras, devolução, recall, direitos econômicos e lacunas.</p></article>
+    <article class="card"><div class="step">03</div><h3 data-i="t3">Relatório operacional</h3><p class="muted" data-i="t3b">Gravidade, trechos e o que o clube deve checar — com o próprio advogado.</p></article>
+  </div>
+</div></section>
+<section id="preco"><div class="wrap">
+  <h2 data-i="rT">Preço transparente</h2>
+  <p class="sub" data-i="rL">Tudo em dólar. Checkout entra no próximo passo; a compra só avança depois do aceite dos Termos.</p>
+  <div class="g2">
+    <article class="price">
+      <div class="muted" data-i="aN">Análise avulsa</div>
+      <div class="val">USD 30 <small data-i="aS">/ contrato</small></div>
+      <p class="muted" data-i="aD">Um contrato, um relatório de risco. Ideal antes de assinar.</p>
+      <ul>
+        <li data-i="a1">1 análise de risco contratual</li>
+        <li data-i="a2">Cláusulas sinalizadas por gravidade</li>
+        <li data-i="a3">Pontos de atenção para o clube</li>
+        <li data-i="a4">Relatório permanente na conta</li>
+      </ul>
+    </article>
+    <article class="price feat">
+      <div class="badge" data-i="rec">Recomendado</div>
+      <div class="muted" data-i="mN">Acesso mensal</div>
+      <div class="val">USD 300 <small data-i="mS">/ mês</small></div>
+      <p class="muted" data-i="mD">Vinte análises no ciclo — janela de transferências e rotina.</p>
+      <ul>
+        <li data-i="m1">20 análises de risco por mês</li>
+        <li data-i="m2">Histórico de contratos na conta</li>
+        <li data-i="m3">Alertas de cláusulas recorrentes</li>
+        <li data-i="m4">Cancelável a qualquer momento</li>
+      </ul>
+    </article>
+  </div>
+</div></section>
+<section id="caso"><div class="wrap">
+  <h2 data-i="xT">Caso real — 2022</h2>
+  <p class="sub" data-i="xL">Usada na gestão de um clube profissional. Achados operacionais — não juízo legal.</p>
+  <div class="case">
+    <h3 data-i="xB">O que foi identificado e tratado internamente</h3>
+    <ul class="facts">
+      <li data-i="f1">22 contratos de atletas lidos na temporada</li>
+      <li data-i="f2">Devolução em “perfeitas condições” sem ressalva admissional</li>
+      <li data-i="f3">Multa de R$ 800.000 por partida vista antes da competição</li>
+      <li data-i="f4">Uso do plano de saúde para lesões anteriores ao contrato</li>
+      <li data-i="f5">Controle de gastos em clube com orçamento abaixo de R$ 100.000</li>
+      <li data-i="f6">Atleta com problema físico preexistente detectado antes da assinatura</li>
+    </ul>
+  </div>
+</div></section>
+<section class="cta"><div class="wrap">
+  <h2 data-i="rd">Pronto para ler o risco?</h2>
+  <p class="sub" style="margin-left:auto;margin-right:auto" data-i="rdL">Construída por quem viveu a gestão de clube. Esta página é para divulgar. Pagamento e conta entram na segunda etapa.</p>
+</div></section>
+<footer>
+  <div class="logo">BEN435</div>
+  <div data-i="ft">Análise de risco contratual — não é serviço jurídico.</div>
+</footer>
+<script>
+const T={pt:{legal:"A Ben435 realiza analise operacional de risco contratual. Nao e escritorio de advocacia e nao substitui advogado.",n1:"Como funciona",n2:"Preco",n3:"Caso 2022",k:"Analise de risco contratual para clubes",h1:"Enxergue o risco do contrato",h2:"antes de assinar",ld:"A Ben435 le contratos de atletas, emprestimos e direitos de imagem e marca clausulas que historicamente geram prejuizo. Ferramenta de gestao — nao parecer de advogado.",b1:"Ver preco",b2:"Ver caso 2022",s1:"Clubes profissionais no Brasil",s2:"Cobranca em dolar americano",s3:"Validacao real em campo",pT:"O risco esta no texto",pL:"A maior parte do prejuizo de um clube menor nao comeca no gramado. Comeca numa clausula que ninguem isolou.",c1t:"Clausula oculta",c1b:"Devolucao em perfeitas condicoes, multa por partida e recall sem carencia passam na leitura corrida.",c2t:"Leitura manual falha",c2b:"Dirigente e futebol revisam o PDF a noite. O padrao se perde de um contrato para o outro.",c3t:"Assimetria de mesa",c3b:"Clubes menores aceitam 20-30% de direitos economicos como se fosse padrao. Falta repertorio, nao vontade.",hT:"Como a Ben435 trabalha",hL:"Tres passos. Sem tribunal, sem peticao, sem substituicao do juridico do clube.",t1:"Envie o contrato",t1b:"PDF ou Word — atleta, emprestimo ou imagem.",t2:"Leitura de risco",t2b:"Marca clausulas financeiras, devolucao, recall, direitos economicos e lacunas.",t3:"Relatorio operacional",t3b:"Gravidade, trechos e o que o clube deve checar — com o proprio advogado.",rT:"Preco transparente",rL:"Tudo em dolar. Checkout entra no proximo passo; a compra so avanca depois do aceite dos Termos.",aN:"Analise avulsa",aS:"/ contrato",aD:"Um contrato, um relatorio de risco. Ideal antes de assinar.",a1:"1 analise de risco contratual",a2:"Clausulas sinalizadas por gravidade",a3:"Pontos de atencao para o clube",a4:"Relatorio permanente na conta",rec:"Recomendado",mN:"Acesso mensal",mS:"/ mes",mD:"Vinte analises no ciclo — janela de transferencias e rotina.",m1:"20 analises de risco por mes",m2:"Historico de contratos na conta",m3:"Alertas de clausulas recorrentes",m4:"Cancelavel a qualquer momento",xT:"Caso real — 2022",xL:"Usada na gestao de um clube profissional. Achados operacionais — nao juizo legal.",xB:"O que foi identificado e tratado internamente",f1:"22 contratos de atletas lidos na temporada",f2:"Devolucao em perfeitas condicoes sem ressalva admissional",f3:"Multa de R$ 800.000 por partida vista antes da competicao",f4:"Uso do plano de saude para lesoes anteriores ao contrato",f5:"Controle de gastos em clube com orcamento abaixo de R$ 100.000",f6:"Atleta com problema fisico preexistente detectado antes da assinatura",rd:"Pronto para ler o risco?",rdL:"Construida por quem viveu a gestao de clube. Esta pagina e para divulgar. Pagamento e conta entram na segunda etapa.",ft:"Analise de risco contratual — nao e servico juridico."},en:{legal:"Ben435 performs operational contract-risk analysis. It is not a law firm and does not replace a lawyer.",n1:"How it works",n2:"Pricing",n3:"2022 case",k:"Contract risk analysis for clubs",h1:"See the contract risk",h2:"before you sign",ld:"Ben435 reads player, loan and image-rights contracts and flags clauses that have historically produced losses. A management tool — not a lawyer opinion.",b1:"See pricing",b2:"See the 2022 case",s1:"Professional clubs in Brazil",s2:"Billed in US dollars",s3:"Validated in the field",pT:"The risk is in the text",pL:"Most of a smaller club damage does not start on the pitch. It starts in a clause nobody isolated.",c1t:"Hidden clause",c1b:"Return in perfect condition, per-match fines and recall with no waiting period sail through a rushed read.",c2t:"Manual reading fails",c2b:"Directors review the PDF at night. The pattern is lost from one contract to the next.",c3t:"Table asymmetry",c3b:"Smaller clubs accept 20-30% of economic rights as if it were standard. They lack repertoire, not will.",hT:"How Ben435 works",hL:"Three steps. No court, no petition, no substitute for the club own counsel.",t1:"Send the contract",t1b:"PDF or Word — player, loan or image rights.",t2:"Risk reading",t2b:"Flags financial clauses, return, recall, economic rights and recurring gaps.",t3:"Operational report",t3b:"Severity, excerpts and what the club should check — with its own lawyer.",rT:"Transparent pricing",rL:"Everything in US dollars. Checkout comes next; purchase only proceeds after Terms acceptance.",aN:"Single analysis",aS:"/ contract",aD:"One contract, one risk report. Ideal before you sign.",a1:"1 contractual risk analysis",a2:"Clauses flagged by severity",a3:"Watch-outs for the club",a4:"Permanent report in the account",rec:"Recommended",mN:"Monthly access",mS:"/ month",mD:"Twenty analyses per cycle — transfer windows and club routine.",m1:"20 risk analyses per month",m2:"Contract history in the account",m3:"Alerts on recurring clauses",m4:"Cancel anytime",xT:"Real case — 2022",xL:"Used in the management of a professional club. Operational findings — not a legal ruling.",xB:"What was identified and handled internally",f1:"22 player contracts read in the season",f2:"Return in perfect condition with no admission reservation",f3:"BRL 800,000 per-match fine spotted before the competition",f4:"Health-plan use for injuries prior to the contract",f5:"Spend control at a club with a budget under BRL 100,000",f6:"Player with a pre-existing physical issue flagged before signing",rd:"Ready to read the risk?",rdL:"Built by people who have run a club. This page is for sharing. Payments and accounts come in the next step.",ft:"Contract risk analysis — not a legal service."}};
+function L(lang){const d=T[lang]||T.pt;document.documentElement.lang=lang==="en"?"en":"pt-BR";document.querySelectorAll("[data-i]").forEach(function(el){var k=el.getAttribute("data-i");if(d[k])el.textContent=d[k]});document.getElementById("pt").classList.toggle("on",lang==="pt");document.getElementById("en").classList.toggle("on",lang==="en");try{localStorage.setItem("ben435-lang",lang)}catch(e){}}
+try{var s=localStorage.getItem("ben435-lang");if(s==="en"||(!s&&/^en/i.test(navigator.language||"")))L("en")}catch(e){}
+</script>
+</body>
+</html>
